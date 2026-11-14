@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Hujan Project</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- LOGIN -->
+
+    <section id="loginScreen" class="login-screen">
+
+        <form id="loginForm" class="login-card">
+
+            <div class="admin-logo">
+            <img src="../assets/Logo.png"alt="Hujan Project">
+        </div>
+
+            <h2>HUJAN PROJECT</h2>
+
+            <p>Admin Management System</p>
+
+            <label>Email Admin</label>
+            <input type="email" id="email" required>
+
+            <label>Password</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Login Dashboard</button>
+
+            <div id="loginError"></div>
+
+            <a href="../index.html">← Kembali ke Website</a>
+
+        </form>
+
+    </section>
+
+    <!-- DASHBOARD -->
+
+    <div id="adminApp" class="admin-app hidden">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+    <div class="admin-logo">
+        <img src="../assets/Logo.png"alt="Hujan Project">
+    </div>
+
+    <div>
+        <h3>HUJAN PROJECT</h3>
+        <small>ADMIN PANEL</small>
+    </div>
+
+</div>
+
+            <nav>
+
+                <button class="nav-btn active" data-tab="overview">
+                    ▦ Dashboard
+                </button>
+
+                <button class="nav-btn" data-tab="bookings">
+                    ▤ Booking
+                </button>
+
+                <button class="nav-btn" data-tab="services">
+                    ✧ Services
+                </button>
+
+                <button class="nav-btn" data-tab="projects">
+                    ▧ Projects
+                </button>
+
+            </nav>
+
+            <button id="logoutBtn" class="logout">
+                Logout ↪
+            </button>
+
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <small>HUJAN PROJECT MANAGEMENT</small>
+                    <h1 id="pageTitle">Dashboard</h1>
+                </div>
+
+                <span class="admin-status">● Admin</span>
+            </header>
+
+            <!-- DASHBOARD -->
+
+            <section id="overviewTab" class="tab-panel">
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <p>Total Booking</p>
+                        <h2 id="totalBookings">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Pending</p>
+                        <h2 id="pendingBookings">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Diproses</p>
+                        <h2 id="processingBookings">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Total Project</p>
+                        <h2 id="totalProjects">0</h2>
+                    </div>
+
+                </div>
+
+                <div class="panel">
+                    <h2>Booking Terbaru</h2>
+                    <div id="recentBookings"></div>
+                </div>
+
+            </section>
+
+            <!-- BOOKING -->
+
+            <section id="bookingsTab" class="tab-panel hidden">
+
+                <div class="panel">
+                    <h2>Manajemen Booking</h2>
+                    <div id="bookingTable"></div>
+                </div>
+
+            </section>
+
+            <!-- SERVICES -->
+
+            <section id="servicesTab" class="tab-panel hidden">
+
+                <div class="panel">
+
+                    <h2>Tambah Layanan</h2>
+
+                    <form id="serviceForm" class="admin-form">
+
+                        <input type="text" id="serviceName"
+                            placeholder="Nama layanan" required>
+
+                        <input type="text" id="serviceDescription"
+                            placeholder="Deskripsi layanan" required>
+
+                        <button type="submit">Tambah Layanan</button>
+
+                    </form>
+
+                    <div id="serviceList"></div>
+
+                </div>
+
+            </section>
+
+            <!-- PROJECTS -->
+
+            <section id="projectsTab" class="tab-panel hidden">
+
+                <div class="panel">
+
+                    <h2>Tambah Project</h2>
+
+                    <form id="projectForm" class="admin-form">
+
+                        <input type="text" id="projectTitle"
+                            placeholder="Nama project" required>
+
+                        <input type="text" id="projectCategory"
+                            placeholder="Kategori event">
+
+                        <input type="url" id="projectImage"
+                            placeholder="URL gambar (https://...)">
+
+                        <button type="submit">Tambah Project</button>
+
+                    </form>
+
+                    <div id="projectList"></div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script type="module" src="admin.js"></script>
+
+</body>
+</html>
